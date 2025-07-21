@@ -6,7 +6,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:5173'], // atau 3000 kalau pakai create-react-app
+    'allowed_origins' => [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    ],
+
 
     'allowed_origins_patterns' => [],
 
@@ -16,6 +20,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true, // penting kalau pakai Sanctum / cookies
+    'supports_credentials' => true,
 ];
 

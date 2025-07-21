@@ -13,9 +13,9 @@ use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-    public function registrasi(Request $request)
+    public function register(Request $request)
     {
-        $validator = validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|min:8',
@@ -43,8 +43,9 @@ class AuthController extends Controller
             'message' => 'Success',
             'user' => $user,
             'token' => $token
-        ],);
+        ]);
     }
+
 
     public function login(Request $request)
     {

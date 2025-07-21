@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\V1\SubTaskController;
 use App\Http\Controllers\Api\V1\OrderController;
 use App\Http\Controllers\Api\V1\PaymentController;
 use App\Http\Controllers\Api\V1\PlanController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +21,8 @@ use App\Http\Controllers\Api\V1\PlanController;
 |
 */
 
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
-
 Route::prefix('v1')->group(function () {
+    // Route::get('/users', [UserController::class, 'index']);
     Route::prefix('auth')->group(function () {
         Route::post('/register', [AuthController::class, 'register']);
         Route::post('/login', [AuthController::class, 'login']);
